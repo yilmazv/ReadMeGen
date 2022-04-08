@@ -53,18 +53,19 @@ inquirer
   ])
   .then((response) => {
     const fileName = `${response.title}.md`;
-    // let licenseNew = response.license;
-    // if (licenseNew === "GNU GPLv3") {
-    //   return `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)`;
-    // } else if (licenseNew === "Apache License 2.0") {
-    //   return `[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`;
-    // } else if (licenseNew === "MIT") {
-    //   return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
-    // } else if (licenseNew === "ISC License") {
-    //   return `[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)`;
-    // } else if (licenseNew === "GNU") {
-    //   return `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)`;
-    // }
+    let badgeNew = "";
+    let licenseNew = response.license;
+    if (licenseNew === "GNU GPLv3") {
+      badgeNew = `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)`;
+    } else if (licenseNew === "Apache License 2.0") {
+      badgeNew = `[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`;
+    } else if (licenseNew === "MIT") {
+      badgeNew = `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
+    } else if (licenseNew === "ISC License") {
+      badgeNew = `[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)`;
+    } else if (licenseNew === "GNU") {
+      badgeNew = `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)`;
+    }
     let readTemp = `## Title
     ${response.title}
 ## Table of Contents 
@@ -95,7 +96,7 @@ If your README is long, add a table of contents to make it easy for users to fin
   ${response.contribution}
     
 ## Badges
-  ${response.license}
+  ${badgeNew}
     
 ## Test
   ${response.test}
