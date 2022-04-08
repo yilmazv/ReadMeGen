@@ -106,7 +106,7 @@ If your README is long, add a table of contents to make it easy for users to fin
     
 ## Contact me
   ${response.email}`;
-    fs.writeFile(fileName, readTemp, (err) =>
+    fs.writeFile("README.md", readTemp, (err) =>
       err ? console.error(err) : console.log("Commit logged!")
     );
   });
